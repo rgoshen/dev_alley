@@ -1,11 +1,14 @@
 const express = require("express");
+const { PORT, HOSTNAME } = require("./config/config");
+const connectDB = require("./config/db");
 
 const app = express();
 
-const { PORT, HOSTNAME } = require("./config");
+// Connect to database
+connectDB();
 
 // Test
-app.get("/", (req, res) => res.send("Developer Alley API started..."));
+app.get("/", (req, res) => console.log("Developer Alley API started..."));
 
 app.listen(PORT, (err) => {
   if (err) {
