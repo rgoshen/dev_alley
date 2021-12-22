@@ -8,6 +8,9 @@ const app = express();
 // Connect to database
 connectDB();
 
+// Init Middleware
+app.use(express.json({ extended: false }));
+
 app.use(morgan("dev"));
 
 // Define Routes
