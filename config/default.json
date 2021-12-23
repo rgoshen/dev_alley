@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://rgoshen:8dR557mGJQ7ruYX@devalley.c72tk.mongodb.net/devalleydb?retryWrites=true&w=majority",
-  "jwtSecret": "mysecrettoken"
+  "jwtSecret": "mysecrettoken",
+  "githubClientID": "70a46d55754d6a0d5d46",
+  "githubSecret": "647bb5fa10f5a0ed39e4bee69cffd83da3071238"
 }
