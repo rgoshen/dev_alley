@@ -6,7 +6,7 @@ import { createProfile } from "../../actions/profile";
 
 // TODO: add accordion style opening to social links
 
-const CreateProfile = ({ createProfile, getCurrentProfile, history }) => {
+const CreateProfile = ({ createProfile }) => {
   const [formData, setFormData] = useState({
     company: "",
     website: "",
@@ -51,16 +51,10 @@ const CreateProfile = ({ createProfile, getCurrentProfile, history }) => {
 
   return (
     <section className='container'>
-      <h1 className='large text-primary'>
-        {/* {creatingProfile ? "Create Your Profile" : "Edit Your Profile"} */}
-        Create Your Profile
-      </h1>
+      <h1 className='large text-primary'>Create Your Profile</h1>
       <p className='lead'>
         <i className='fas fa-user' />
         Let's get some information to make your profile stand out
-        {/* {creatingProfile
-          ? ` Let's get some information to make your `
-          : " Add some changes to your profile"} */}
       </p>
       <small>* = required field</small>
       <form className='form' onSubmit={(e) => onSubmit(e)}>
@@ -230,12 +224,6 @@ const CreateProfile = ({ createProfile, getCurrentProfile, history }) => {
 
 CreateProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
-  getCurrentProfile: PropTypes.func.isRequired,
-  profile: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  profile: state.profile,
-});
-
-export default connect(mapStateToProps, { createProfile })(CreateProfile);
+export default connect(null, { createProfile })(CreateProfile);
