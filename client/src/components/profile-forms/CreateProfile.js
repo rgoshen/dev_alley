@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { createProfile } from "../../actions/profile";
 
 // TODO: add accordion style opening to social links
 
-const CreateProfile = (props) => {
+const CreateProfile = ({ createProfile, getCurrentProfile, history }) => {
   const [formData, setFormData] = useState({
     company: "",
     website: "",
@@ -22,6 +23,8 @@ const CreateProfile = (props) => {
   });
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
+  const navigate = useNavigate();
 
   const {
     company,
@@ -41,6 +44,11 @@ const CreateProfile = (props) => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+    createProfile(formData, navigate);
+  };
+
   return (
     <section className='container'>
       <h1 className='large text-primary'>
@@ -55,8 +63,7 @@ const CreateProfile = (props) => {
           : " Add some changes to your profile"} */}
       </p>
       <small>* = required field</small>
-      {/* <form className='form' onSubmit={onSubmit}> */}
-      <form className='form'>
+      <form className='form' onSubmit={(e) => onSubmit(e)}>
         <div className='form-group'>
           <select name='status' value={status} onChange={(e) => onChange(e)}>
             <option>* Select Professional Status</option>
@@ -221,6 +228,14 @@ const CreateProfile = (props) => {
   );
 };
 
-CreateProfile.propTypes = {};
+CreateProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
+  profile: PropTypes.object.isRequired,
+};
 
-export default CreateProfile;
+const mapStateToProps = (state) => ({
+  profile: state.profile,
+});
+
+export default connect(mapStateToProps, { createProfile })(CreateProfile);
