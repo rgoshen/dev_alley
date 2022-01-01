@@ -99,6 +99,18 @@ img {
 .py-3 {
   padding: 3rem 0;
 }
+.px {
+  padding: 0 0.5rem;
+}
+.px-1 {
+  padding: 0 1rem;
+}
+.px-2 {
+  padding: 0 2rem;
+}
+.px-3 {
+  padding: 0 3rem;
+}
 
 /* Margin */
 .m {
@@ -125,6 +137,18 @@ img {
 .my-3 {
   margin: 3rem 0;
 }
+.mx {
+  padding: 0 0.5rem;
+}
+.mx-1 {
+  padding: 0 1rem;
+}
+.mx-2 {
+  padding: 0 2rem;
+}
+.mx-3 {
+  padding: 0 3rem;
+}
 
 .btn {
   display: inline-block;
@@ -146,6 +170,13 @@ img {
   margin: 0.3rem;
   background: var(--light-color);
   color: #333;
+}
+
+.alert-wrapper {
+  position: fixed;
+  top: 4rem;
+  right: 2rem;
+  display: inline-block;
 }
 
 .alert {
@@ -222,6 +253,15 @@ img {
   height: 1px;
   background: #ccc;
   margin: 1.5rem 0;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 /* Overlay */
@@ -575,3 +615,9 @@ button {
     padding: 0.3rem 0.4rem;
   }
 }
+
+/* TODO: add accordion CSS here
+/* Animation Styles */
+/* .accordion{
+
+} */
