@@ -1,18 +1,18 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Moment from "react-moment";
-import { connect } from "react-redux";
-import { deleteExperience } from "../../actions/profile";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Moment from 'react-moment';
+import { connect } from 'react-redux';
+import { deleteExperience } from '../../actions/profile';
 
 const Experience = ({ experience, deleteExperience }) => {
   const experiences = experience.map((exp) => (
-    <tr key={exp.id}>
+    <tr key={exp._id}>
       <td>{exp.company}</td>
       <td className='hide-sm'>{exp.title}</td>
       <td>
-        <Moment format='YYYY/MM/DD'>{exp.from}</Moment> -{" "}
+        <Moment format='YYYY/MM/DD'>{exp.from}</Moment> -{' '}
         {exp.to === null ? (
-          " Now"
+          ' Now'
         ) : (
           <Moment format='YYYY/MM/DD'>{exp.to}</Moment>
         )}
