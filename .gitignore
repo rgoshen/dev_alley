@@ -195,3 +195,4 @@ dist
 
 # misc
 db_access.txt
+config/default.json
