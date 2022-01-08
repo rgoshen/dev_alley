@@ -174,10 +174,9 @@ img {
 
 .alert-wrapper {
   position: fixed;
-  top: 3rem;
-  /* right: 2rem; */
+  top: 4rem;
+  right: 2rem;
   display: inline-block;
-  width: 100%;
 }
 
 .alert {
