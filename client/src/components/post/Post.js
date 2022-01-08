@@ -13,6 +13,7 @@ const Post = ({ getPost, post: { post, loading } }) => {
   useEffect(() => {
     getPost(id);
   }, [getPost, id]);
+
   return loading || post === null ? (
     <Spinner />
   ) : (

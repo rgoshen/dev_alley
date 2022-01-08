@@ -22,11 +22,6 @@ const AddEducation = ({ addEducation }) => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    addEducation(formData, navigate);
-  };
-
   return (
     <section className='container'>
       <h1 className='large text-primary'>Add Your Education</h1>
@@ -35,14 +30,20 @@ const AddEducation = ({ addEducation }) => {
         have attended
       </p>
       <small>* = required field</small>
-      <form className='form' onSubmit={(e) => onSubmit(e)}>
+      <form
+        className='form'
+        onSubmit={(e) => {
+          e.preventDefault();
+          addEducation(formData, navigate);
+        }}
+      >
         <div className='form-group'>
           <input
             type='text'
             placeholder='* School or Bootcamp'
             name='school'
             value={school}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
           />
         </div>
@@ -52,7 +53,7 @@ const AddEducation = ({ addEducation }) => {
             placeholder='* Degree or Certificate'
             name='degree'
             value={degree}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
           />
         </div>
@@ -62,17 +63,12 @@ const AddEducation = ({ addEducation }) => {
             placeholder='Field of Study'
             name='fieldofstudy'
             value={fieldofstudy}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
           />
         </div>
         <div className='form-group'>
           <h4>From Date</h4>
-          <input
-            type='date'
-            name='from'
-            value={from}
-            onChange={(e) => onChange(e)}
-          />
+          <input type='date' name='from' value={from} onChange={onChange} />
         </div>
         <div className='form-group'>
           <p>
@@ -92,7 +88,7 @@ const AddEducation = ({ addEducation }) => {
             type='date'
             name='to'
             value={to}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             disabled={current}
           />
         </div>
@@ -103,7 +99,7 @@ const AddEducation = ({ addEducation }) => {
             rows='5'
             placeholder='Program Description'
             value={description}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
           />
         </div>
         <input type='submit' className='btn btn-primary my-1' />

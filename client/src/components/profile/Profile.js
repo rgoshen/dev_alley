@@ -3,21 +3,22 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
-import { getProfileById } from "../../actions/profile";
 import ProfileTop from "./ProfileTop";
 import ProfileAbout from "./ProfileAbout";
 import ProfileExperience from "./ProfileExperience";
 import ProfileEducation from "./ProfileEducation";
 import ProfileGithub from "./ProfileGithub";
+import { getProfileById } from "../../actions/profile";
 
-const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
+const Profile = ({ getProfileById, profile: { profile }, auth }) => {
   const { id } = useParams();
   useEffect(() => {
     getProfileById(id);
   }, [getProfileById, id]);
+
   return (
     <section className='container'>
-      {profile === null || loading ? (
+      {profile === null ? (
         <Spinner />
       ) : (
         <>
@@ -49,6 +50,7 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
                 <h4>No experience credentials</h4>
               )}
             </div>
+
             <div className='profile-edu bg-white p-2'>
               <h2 className='text-primary'>Education</h2>
               {profile.education.length > 0 ? (
@@ -64,6 +66,7 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth }) => {
                 <h4>No education credentials</h4>
               )}
             </div>
+
             {profile.githubusername && (
               <ProfileGithub username={profile.githubusername} />
             )}
