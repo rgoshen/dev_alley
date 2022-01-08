@@ -1,4 +1,5 @@
 const express = require("express");
+const axios = require("axios");
 const router = express.Router();
 const config = require("config");
 const auth = require("../../middleware/auth");
@@ -286,7 +287,7 @@ router.get("/github/:username", async (req, res) => {
     );
     const headers = {
       "user-agent": "node.js",
-      Authorization: `token ${config.get("githubToken")}`,
+      Authorization: `token ${config.get("githubSecret")}`,
     };
 
     const gitHubResponse = await axios.get(uri, { headers });
