@@ -25,7 +25,7 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
-- [Usage](#usage)
+- [Demo](#demo)
 - [Built Using](#built_using)
 - [TODO](../TODO.md)-->
 - [Authors](#authors)-->
@@ -40,11 +40,19 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
+| Client-side                       | Server-side                |
+| --------------------------------- | -------------------------- |
+| react: ^17.0.2                    | axios: ^0.24.0             |
+| react-dom: ^17.0.2                | bcryptjs: ^2.4.3           |
+| react-router-dom: ^6.2.1          | colors: ^1.4.0             |
+| react-scripts: ^5.0.0             | config: ^3.3.6             |
+| redux: ^4.1.2                     | dotenv: ^10.0.0            |
+| redux-devtools-extension: ^2.13.9 | express: ^4.17.2           |
+| redux-thunk: ^4.1.2               | express-validator: ^6.14.0 |
+| uuid: ^8.3.2                      | gravatar: ^1.8.2           |
+|                                   | jsonwebtoken: ^8.5.1       |
+|                                   | mongoose: ^6.1.3           |
+|                                   | normalize                  |
 
 ### Installing
 
@@ -84,9 +92,7 @@ End with an example of getting some data out of the system or using it for a lit
 <!-- Give an example -->
 <!-- ``` -->
 
-## 🎈 Usage <a name="usage"></a>
-
-### Demo
+## 🎈 Demo <a name="demo"></a>
 
 ![image](/readme/imgs/DevAlleyDemo.gif)
 
@@ -101,6 +107,10 @@ Add additional notes about how to deploy this on a live system.
 - [Express](https://expressjs.com/) - Server Framework
 - [ReactJs](https://reactjs.org/) - Web Framework
 
+## Standard
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+
 ## ✍️ Author(s) <a name = "authors"></a>
 
-- [@rgoshen](https://github.com/rgoshen) - Idea & Initial work
+- [rgoshen](http://rickgoshen.epizy.com/) - Idea & Initial work - Email me: rick.goshen@gmail.com (welcome, say hi!)
