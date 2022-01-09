@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="readme/imgs/logo192.png" alt="Project logo"></a>
+ <img width=200px height=200px src="readme/imgs/devalley_logo.png" alt="Project logo"></a>
 </p>
 
 <h1 align="center">Developer Alley</h1>
