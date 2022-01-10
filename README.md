@@ -28,7 +28,7 @@
 - [Demo](#demo)
 - [Built Using](#built_using)
 - [TODO](../TODO.md)-->
-- [Authors](#authors)-->
+- [Authors](#authors)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -58,19 +58,75 @@ These instructions will get you a copy of the project up and running on your loc
 
 A step by step series of examples that tell you how to get a development env running.
 
-Say what the step will be
+Clone or download
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+```bash
+git clone https://github.com/rgoshen/dev_alley
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
+Change directory into project folder
+
+```bash
+cd dev_alley
+```
+
+Add a default.json file in config folder with the following
+
+```json
+{
+  "mongoURI": "<your_mongoDB_Atlas_uri_with_credentials>",
+  "jwtSecret": "secret",
+  "githubToken": "<yoursecrectaccesstoken>"
+}
+```
+
+Install server dependencies(PORT: 5000)
+
+```bash
+npm install
+```
+
+Install client dependencies(PORT: 3000)
+
+```bash
+cd client
+npm install
+```
+
+### Starting
+
+Note: you need to run both server and client concurrently
+Run both Express and React from root
+
+```bash
+cd ..
+npm run dev
+```
+
+### Build for production
+
+```bash
+cd client
+npm run build
+```
+
+### Test production before deploy
+
+After running a build in the client 👆, cd into the root of the project.  
+And run...
+
+Linux/Unix
+
+```bash
+NODE_ENV=production node server.js
+```
+
+Windows Cmd Prompt or Powershell
+
+```bash
+$env:NODE_ENV="production"
+node server.js
+```
 
 <!-- ## 🔧 Running the tests <a name = "tests"></a> -->
 
@@ -96,9 +152,66 @@ End with an example of getting some data out of the system or using it for a lit
 
 ![image](/readme/imgs/DevAlleyDemo.gif)
 
-## 🚀 Deployment <a name = "deployment"></a>
+## 🚀 Deployment to Heroku <a name = "deployment"></a>
 
-Add additional notes about how to deploy this on a live system.
+If you followed the sensible advice above and included `config/default.json` and `config/production.json` in your .gitignore file, then pushing to Heroku will omit your config files from the push.  
+However, Heroku needs these files for a successful build.  
+So how to get them to Heroku without commiting them to GitHub?
+
+What I suggest you do is create a local only branch, lets call it _production_.
+
+```bash
+git checkout -b production
+```
+
+We can use this branch to deploy from, with our config files.
+
+Add the config file...
+
+```bash
+git add -f config/production.json
+```
+
+This will track the file in git on this branch only. **DON'T PUSH THE PRODUCTION BRANCH TO GITHUB**
+
+Commit...
+
+```bash
+git commit -m 'ready to deploy'
+```
+
+Create your Heroku project
+
+```bash
+heroku create
+```
+
+And push the local production branch to the remote heroku main branch.
+
+```bash
+git push heroku production:main
+```
+
+Now Heroku will have the config it needs to build the project.
+
+> **Don't forget to make sure your production database is not whitelisted in MongoDB Atlas, otherwise the database connection will fail and your app will crash.**
+
+After deployment you can delete the production branch if you like.
+
+```bash
+git checkout main
+git branch -D production
+```
+
+Or you can leave it to merge and push updates from another branch.  
+Make any changes you need on your main branch and merge those into your production branch.
+
+```bash
+git checkout production
+git merge main
+```
+
+Once merged you can push to heroku as above and your site will rebuild and be updated.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -114,3 +227,7 @@ Add additional notes about how to deploy this on a live system.
 ## ✍️ Author(s) <a name = "authors"></a>
 
 - [rgoshen](http://rickgoshen.epizy.com/) - Idea & Initial work - Email me: rick.goshen@gmail.com (welcome, say hi!)
+
+```
+
+```
