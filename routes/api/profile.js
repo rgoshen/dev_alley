@@ -67,10 +67,7 @@ router.post(
     // build a profile
     const profileFields = {
       user: req.user.id,
-      website:
-        website && website !== ""
-          ? normalize(website, { forceHttps: true })
-          : "",
+      website: website && website !== "" ? normalize(website) : "",
       skills: Array.isArray(skills)
         ? skills
         : skills.split(",").map((skill) => " " + skill.trim()),
