@@ -34,6 +34,14 @@
 
 A small social website for developers. This app allows developers to communicate, provide information and general share of knowledge. “Developer Alley”, is essentially a resource tool similar to other social apps such as "[Twitter](https://twitter.com/)". The purpose of this app is that it will provide access to information, resources and allow developer to network.
 
+### Features
+ - Login & Authentication using JSON Web Token
+ - Create User profiles and delete own profile/account
+ - Create posts, like posts, unlike posts and add comments
+ - Delete own posts and own comments
+ - View all developer profiles' basic information
+ - View full individual developer profiles
+
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
