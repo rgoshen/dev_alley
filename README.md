@@ -60,7 +60,6 @@ These instructions will get you a copy of the project up and running on your loc
 | uuid: ^8.3.2                      | gravatar: ^1.8.2           |
 |                                   | jsonwebtoken: ^8.5.1       |
 |                                   | mongoose: ^6.1.3           |
-|                                   | normalize                  |
 
 ### Installing
 
@@ -88,7 +87,9 @@ Add a default.json file in config folder with the following
 }
 ```
 
-Install server dependencies(PORT: 5000)
+Go [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for instruction on getting your personal access token from Github
+
+Install server dependencies(Linux & Windows PORT: 5000, Mac PORT: 5001)
 
 ```bash
 npm install
