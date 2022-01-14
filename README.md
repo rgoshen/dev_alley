@@ -60,6 +60,7 @@ These instructions will get you a copy of the project up and running on your loc
 | uuid: ^8.3.2                      | gravatar: ^1.8.2           |
 |                                   | jsonwebtoken: ^8.5.1       |
 |                                   | mongoose: ^6.1.3           |
+|                                   | normalize-url: ^5.3.0.     |
 
 ### Installing
 
