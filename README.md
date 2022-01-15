@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="" rel="noopener">
+  <a href="https://dev-alley.herokuapp.com/" rel="noopener">
  <img width=200px height=200px src="readme/imgs/devalley_logo.png" alt="Project logo"></a>
 </p>
 
@@ -122,7 +122,8 @@ npm run build
 
 ### Test production before deploy
 
-After running a build in the client 👆, cd into the root of the project.  
+After running a build in the client 👆, cd into the root of the project.
+Make sure you duplicate default.json and rename to production.json in the config folder.  
 And run...
 
 Linux/Unix
@@ -161,6 +162,8 @@ node server.js
 ## 🎈 Demo <a name="demo"></a>
 
 ![image](/readme/imgs/DevAlleyDemo.gif)
+
+For the live version go [here](https://dev-alley.herokuapp.com/).
 
 ## 🚀 Deployment to Heroku <a name = "deployment"></a>
 
